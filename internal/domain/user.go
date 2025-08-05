@@ -1,10 +1,14 @@
 package domain
 
-type User struct {
-	ID       int64  `json:"id"`
-	Username string `json:"username"`
-	Password string `json:"-"`
-	IsAdmin  bool   `json:"is_admin"`
+import "time"
+
+type Users struct {
+	UserID    int64     `json:"user_id"`
+	Username  string    `json:"username"`
+	Password  string    `json:"-"`
+	IsAdmin   bool      `json:"is_admin"`
+	CreatedAt time.Time `json:"created_at"`
+	UpdatedAt time.Time `json:"updated_at"`
 }
 
 type RegisterRequest struct {
